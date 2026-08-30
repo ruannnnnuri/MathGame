@@ -4,29 +4,33 @@
              x:Class="MathGame.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
+        <VerticalStackLayout Padding="30,0" Spacing="25" HorizontalOptions="Fill" VerticalOptions="Center">
+            
             <Label Text="Desafio Matemático"
-                   FontSize="32" HorizontalOptions="Center" VerticalOptions="Start"/>
+                FontSize="32" HorizontalOptions="Center" VerticalOptions="Start"/>
             <Image Source="mathlogo.png" Aspect="Center"
-                   HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Label Text="Resolva o desafio matemático abaixo:" FontSize="18"
-                   HorizontalOptions="Center" VerticalOptions="Start"/>
+                HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Selecione a dificuldade abaixo:" FontSize="18"
+                HorizontalOptions="Center" VerticalOptions="Start"/>
+            
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Label x:Name="lb1" FontSize="30" Text="5"/>
-                <Label x:Name="lb2" FontSize="30" Text="*"/>
-                <Label x:Name="lb3" FontSize="30" Text="3"/>
+                <RadioButton x:Name="rbFacil" GroupName="ModoJogo" HorizontalOptions="Center"
+                 Content="Fácil" 
+                 Value="0"
+                 CheckedChanged="Modo_CheckedChanged"/>
+
+                <RadioButton x:Name="rbMedio" GroupName="ModoJogo" HorizontalOptions="Center"
+                 Content="Médio" 
+                 Value="1"
+                 CheckedChanged="Modo_CheckedChanged"/>
+
+                <RadioButton x:Name="rbDificil" GroupName="ModoJogo" HorizontalOptions="Center"
+                 Content="Difícil" 
+                 Value="2"
+                 CheckedChanged="Modo_CheckedChanged"/>
             </HorizontalStackLayout>
-            <Entry x:Name="txR" Placeholder="Digite a resposta aqui..." Keyboard="Numeric"/>
-            <Button x:Name="btOK" Text="Conferir resultado" Clicked="btOK_Clicked"/>
-            <Image x:Name="imR"
-                   Source="question.png"
-                   Aspect="Center"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-            <HorizontalStackLayout Spacing="18" HorizontalOptions="Center">
-                <Label x:Name="lbAcertou" FontSize="30" Text="Acertos: 0"/>
-                <Label x:Name="lbErrou" FontSize="30" Text="Erros: 0"/>
-            </HorizontalStackLayout>
+            
+            <Button x:Name="btJogar" Text="Iniciar Jogo" Clicked="btJogar_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

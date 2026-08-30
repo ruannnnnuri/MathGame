@@ -7,8 +7,8 @@
     Title="MathGame">
 
     <ShellContent
-        Title="Home"
+        Title="Menu"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"/>
 
 </Shell>
